@@ -15,6 +15,43 @@
     transition: margin-left .25s ease-in-out;
     border-bottom: 1px solid $glass-border;
 
+    // User Info Styles
+    .user-info {
+        .user-avatar {
+            .text-gold {
+                color: $gold;
+            }
+        }
+        .user-name {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+        }
+    }
+
+    // Logout Button
+    .btn-logout {
+        background: rgba(255, 215, 0, 0.1);
+        border: 1px solid rgba(255, 215, 0, 0.2);
+        color: $gold;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.4);
+            color: $gold-light;
+            transform: translateY(-2px);
+        }
+
+        ng-icon {
+            color: $gold;
+        }
+    }
+
     .topbar-menu {
         display: flex;
         justify-content: space-between;
