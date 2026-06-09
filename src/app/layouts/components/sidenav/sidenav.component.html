@@ -1,0 +1,32 @@
+<div class="sidenav-menu">
+
+    <a routerLink="/" class="logo">
+        <span class="logo logo-light">
+          <span class="logo-lg text-center mt-1"><h1>KAR</h1></span>
+          <span class="logo-sm"><img src="../../../../assets/images/users/image-removebg-preview.png" alt="KAR logo" height="40"></span>
+        </span>
+
+        <span class="logo logo-dark">
+          <span class="logo-lg text-center mt-1"><h1>KAR</h1></span>
+          <span class="logo-sm"><img src="../../../../assets/images/users/image-removebg-preview.png" alt="KAR logo" height="40"></span>
+        </span>
+    </a>
+
+    <!-- Sidebar Hover Menu Toggle Button -->
+    <button (click)="hoverSidebar()" class="button-on-hover">
+        <ng-icon name="tablerMenu4" size="22" class="align-middle"/>
+    </button>
+
+    <!-- Offcanvas Sidebar Menu Close Button -->
+    <button (click)="closeSidebar()" class="button-close-offcanvas">
+        <ng-icon name="tablerX" class="align-middle"/>
+    </button>
+
+    <ngx-simplebar id="sidenav" class="scrollbar mt-5">
+        <!-- User -->
+        <!-- <app-user-profile *ngIf="layout.sidenavUser"/> -->
+
+        <!--- Sidenav Menu -->
+        <app-menu/>
+    </ngx-simplebar>
+</div>

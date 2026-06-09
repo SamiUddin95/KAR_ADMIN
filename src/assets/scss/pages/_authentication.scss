@@ -1,0 +1,124 @@
+//
+// _authentication.scss
+//
+
+// Authentication
+.auth-box {
+    @extend .position-relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.918);
+
+    .card {
+        background: transparent;
+        border: 1px solid #0d3d3d;
+        border-radius: 1rem;
+    }
+
+    .card-body {
+        padding: 50px;
+        background: whitesmoke;
+        border: 1px solid #0d3d3d;
+        border-radius: 1rem 0  0 1rem;
+        backdrop-filter: blur(10px);
+    }
+
+    .form-label {
+        color: black;
+        font-weight: 500;
+    }
+
+    .form-control {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(200, 200, 200, 0.5);
+        color: black;
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        &:focus {
+            background: #ffffff;
+            border-color: #14a89c;
+            color: black;
+            box-shadow: 0 0 0 0.2rem rgba(20, 168, 156, 0.25);
+        }
+    }
+
+    .input-group-text {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(200, 200, 200, 0.5);
+        color: #14a89c;
+    }
+
+    .btn-primary {
+        background: linear-gradient(180deg, #0d1c21 0%, #0d1c21 50%, #0d1c21 100%);;
+        border: none;
+        box-shadow: 0 4px 15px rgba(20, 168, 156, 0.3);
+
+        &:hover {
+            background: linear-gradient(135deg, #0a5f63 0%, #11958a 100%);
+            box-shadow: 0 6px 20px rgba(20, 168, 156, 0.4);
+        }
+    }
+
+    .form-check-label {
+        color: black;
+    }
+
+    a {
+        color: #14a89c;
+
+        &:hover {
+            color: #1ab394;
+        }
+    }
+}
+
+// Auth Brand Logo (Light & Dark Mode)
+.auth-brand {
+    margin-bottom: 2rem;
+
+    .logo-dark {
+        display: block;
+    }
+
+    .logo-light {
+        display: none;
+    }
+
+    h4 {
+        color: #2c3e50;
+        font-size: 1.75rem;
+    }
+
+    p {
+        color: #6c757d;
+        font-size: 0.95rem;
+    }
+}
+
+// Auth Page Side Image
+.card-side-img {
+    background-image: url("../../images/auth.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.auth-overlay {
+    background: linear-gradient(180deg, #0d1c21 0%, #0d3d3d 50%, #0d1c21 100%);
+}
+
+// Responsive
+@include media-breakpoint-up(md) {
+    .auth-box-form {
+        max-width: 405px;
+    }
+    .auth-sub-text {
+        max-width: 300px;
+    }
+}

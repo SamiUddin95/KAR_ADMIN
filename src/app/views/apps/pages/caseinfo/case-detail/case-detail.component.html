@@ -1,0 +1,313 @@
+<app-page-title title="Case Details" subtitle="View and edit case information"></app-page-title>
+
+@if (loading) {
+  <div class="text-center py-5">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+} @else if (caseInfo) {
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5 class="card-title mb-0">Basic Information</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered info-table">
+            <tr>
+              <th>Case ID</th>
+              <td>{{ caseInfo.caseId }}</td>
+            </tr>
+            <tr>
+              <th>Case Type</th>
+              <td>{{ caseInfo.caseType }}</td>
+            </tr>
+            <tr>
+              <th>Date</th>
+              <td>{{ formatDate(caseInfo.date) }}</td>
+            </tr>
+            <tr>
+              <th>User Name</th>
+              <td>{{ caseInfo.userName }}</td>
+            </tr>
+            <tr>
+              <th>Submission Method</th>
+              <td>{{ caseInfo.submissionMethod }}</td>
+            </tr>
+            <tr>
+              <th>Appointment Type</th>
+              <td>{{ caseInfo.appointment_Type }}</td>
+            </tr>
+            <tr>
+              <th>Appointment Date</th>
+              <td>{{ formatDate(caseInfo.appointmentDate) }}</td>
+            </tr>
+            <tr>
+              <th>Status</th>
+              <td>
+                <span class="badge {{ getStatusBadgeClass(caseInfo.status) }}">
+                  {{ caseInfo.status }}
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <th>Created By</th>
+              <td>{{ caseInfo.createdBy }}</td>
+            </tr>
+            <tr>
+              <th>Created On</th>
+              <td>{{ formatDate(caseInfo.createdOn) }}</td>
+            </tr>
+            <tr>
+              <th>Updated By</th>
+              <td>{{ caseInfo.updatedBy }}</td>
+            </tr>
+            <tr>
+              <th>Updated On</th>
+              <td>{{ formatDate(caseInfo.updatedOn) }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card mb-4">
+        <div class="card-header">
+          <h5 class="card-title mb-0">Case Details</h5>
+        </div>
+        <div class="card-body">
+          <table class="table table-bordered info-table">
+            <tr>
+              <th>Case Number</th>
+              <td>{{ caseInfo.caseNumber || 'N/A' }}</td>
+            </tr>
+            <tr>
+              <th>Court</th>
+              <td>{{ caseInfo.court || 'N/A' }}</td>
+            </tr>
+            <tr>
+              <th>Lawyer</th>
+              <td>{{ caseInfo.lawyerName || 'Not Assigned' }}</td>
+            </tr>
+            <tr>
+              <th>Next Hearing</th>
+              <td>{{ caseInfo.nextHearing ? formatDate(caseInfo.nextHearing) : 'N/A' }}</td>
+            </tr>
+            <tr>
+              <th>Schedule Status</th>
+              <td>{{ caseInfo.scheduleStatus || 'N/A' }}</td>
+            </tr>
+            <tr>
+              <th>Under Section</th>
+              <td>{{ caseInfo.under_Section || 'N/A' }}</td>
+            </tr>
+            <tr>
+              <th>Advocate</th>
+              <td>{{ caseInfo.advocate || 'N/A' }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      @if (caseInfo.file_Path) {
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="card-title mb-0">Attached File</h5>
+          </div>
+          <div class="card-body">
+            <div class="alert file-alert">
+              <div class="d-flex align-items-center">
+                <ng-icon name="tablerFile" size="32" class="me-3"></ng-icon>
+                <div>
+                  <strong>File Path:</strong>
+                  <div class="text-muted">{{ caseInfo.file_Path }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Notes Section -->
+  <div class="card mb-4">
+    <div class="card-header">
+      <h5 class="card-title mb-0">
+        <ng-icon name="tablerFileText" class="me-2"></ng-icon>
+        Case Notes
+      </h5>
+    </div>
+    <div class="card-body">
+      @if (notes.length > 0) {
+        <div class="notes-list">
+          @for (note of notes; track note.id) {
+            <div class="note-item mb-3 p-3 bg-light rounded">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <strong>Note #{{ note.id }}</strong>
+                <small class="text-muted">{{ formatDate(note.createdOn) }}</small>
+              </div>
+              <p class="mb-0">{{ note.notes }}</p>
+              @if (note.createdBy) {
+                <small class="text-muted mt-2 d-block">Created by: {{ note.createdBy }}</small>
+              }
+            </div>
+          }
+        </div>
+      } @else {
+        <div class="text-center text-muted py-3">
+          <ng-icon name="tablerFileTextOff" size="32"></ng-icon>
+          <p class="mt-2 mb-0">No notes available for this case</p>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Editable Fields Section -->
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title mb-0">
+        <ng-icon name="tablerEdit" class="me-2"></ng-icon>
+        Editable Fields
+      </h5>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="editableForm" (ngSubmit)="saveEditableFields()">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="lawyerId" class="form-label">Lawyer</label>
+              @if (loadingLawyers) {
+                <div class="form-control text-muted">
+                  <span class="spinner-border spinner-border-sm me-2"></span>
+                  Loading lawyers...
+                </div>
+              } @else {
+                <select 
+                  class="form-select" 
+                  id="lawyerId" 
+                  formControlName="lawyerId">
+                  <option value="">Select a lawyer</option>
+                  @for (lawyer of lawyers; track lawyer.id) {
+                    <option [value]="lawyer.id">
+                      {{ lawyer.firstName }} {{ lawyer.lastName }}
+                    </option>
+                  }
+                </select>
+              }
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="caseNumber" class="form-label">Case Number</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="caseNumber" 
+                formControlName="caseNumber"
+                placeholder="Enter case number">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="court" class="form-label">Court</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="court" 
+                formControlName="court"
+                placeholder="Enter court name">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="nextHearing" class="form-label">Next Hearing Date</label>
+              <input 
+                type="datetime-local" 
+                class="form-control" 
+                id="nextHearing" 
+                formControlName="nextHearing">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="scheduleStatus" class="form-label">Schedule Status</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="scheduleStatus" 
+                formControlName="scheduleStatus"
+                placeholder="Enter schedule status">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="under_Section" class="form-label">Under Section</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="under_Section" 
+                formControlName="under_Section"
+                placeholder="Enter section number">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="advocate" class="form-label">Advocate</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="advocate" 
+                formControlName="advocate"
+                placeholder="Enter advocate name">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="notes" class="form-label">Notes</label>
+              <textarea 
+                class="form-control" 
+                id="notes" 
+                formControlName="notes"
+                rows="4"
+                placeholder="Add a new note for this case..."></textarea>
+              <small class="text-muted">This will add a new note to the case</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex gap-2 mt-4">
+          <button 
+            type="submit" 
+            class="btn btn-primary" 
+            [disabled]="saving">
+            @if (saving) {
+              <span class="spinner-border spinner-border-sm me-2"></span>
+            }
+            Save Changes
+          </button>
+          <button 
+            type="button" 
+            class="btn btn-secondary" 
+            (click)="goBack()">
+            Back to List
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+}

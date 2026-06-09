@@ -1,0 +1,51 @@
+<header class="app-topbar">
+    <div class="container-fluid topbar-menu">
+        <div class="d-flex align-items-center gap-2">
+            <!-- Topbar Brand Logo -->
+            <div class="logo-topbar">
+                <!-- Logo light -->
+                <a routerLink="/" class="logo-light">
+                    <span class="logo-lg">
+                      <img src="../../../../assets/images/users/image-removebg-preview.png" alt="KAR logo" height="50">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="../../../../assets/images/users/image-removebg-preview.png" alt="KAR logo" height="35">
+                    </span>
+                </a>
+
+                <!-- Logo Dark -->
+                <a routerLink="/" class="logo-dark">
+                    <span class="logo-lg">
+                      <img src="../../../../assets/images/users/image-removebg-preview.png" alt="KAR logo" height="50">
+                    </span>
+                    <span class="logo-sm">
+                      <img src="../../../../assets/images/users/image-removebg-preview.png" alt="KAR logo" height="35">
+                    </span>
+                </a>
+            </div>
+
+            <!-- Sidebar Menu Toggle Button -->
+            <button (click)="toggleSidebar()" class="sidenav-toggle-button btn btn-primary btn-icon">
+                <ng-icon name="tablerMenu4" class="fs-22"/>
+            </button>
+
+            <!-- Search -->
+            <!-- <div class="app-search d-none d-xl-flex">
+                <input type="search" class="form-control topbar-search" name="search"
+                       placeholder="Search for something...">
+                <lucide-icon [img]="Search" class="app-search-icon text-muted"/>
+            </div> -->
+
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+
+            <!-- Light/Dark Mode Button -->
+            <app-theme-toggler/>
+
+            <!-- User Dropdown -->
+            <app-user-profile-topbar/>
+
+        </div>
+    </div>
+</header>

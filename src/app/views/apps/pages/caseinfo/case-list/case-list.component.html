@@ -1,0 +1,79 @@
+<app-page-title title="Case Information" subtitle="Manage and view all case information"></app-page-title>
+
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title mb-0">Case List</h5>
+  </div>
+  <div class="card-body">
+    @if (loading) {
+      <div class="text-center py-5">
+        <div class="spinner-border golden-spinner" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    } @else {
+      <div class="table-responsive">
+        <table class="table table-hover align-middle">
+          <thead>
+            <tr>
+              <th>Case ID</th>
+              <th>Date</th>
+              <th>User Name</th>
+              <th>Lawyer</th>
+              <th>Case Number</th>
+              <th>Court</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (caseInfo of caseInfos; track caseInfo.id) {
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="case-icon me-2">
+                      {{ caseInfo.caseId.substring(0, 2) }}
+                    </div>
+                    <div>
+                      <div class="fw-semibold">{{ caseInfo.caseId }}</div>
+                      <small class="text-muted">{{ caseInfo.caseType }}</small>
+                    </div>
+                  </div>
+                </td>
+                <td>{{ formatDate(caseInfo.date) }}</td>
+                <td>{{ caseInfo.userName }}</td>
+                <td>{{ caseInfo.lawyerName || 'Not Assigned' }}</td>
+                <td>{{ caseInfo.caseNumber || 'N/A' }}</td>
+                <td>{{ caseInfo.court || caseInfo.court || 'N/A' }}</td>
+                <td>
+                  <span class="badge {{ getStatusBadgeClass(caseInfo.status) }}">
+                    {{ caseInfo.status }}
+                  </span>
+                </td>
+                <td>
+                  <ng-icon name="tablerEye" class="golden-icon me-2" (click)="openDetailModal(caseInfo.id)" title="View Details"></ng-icon>
+                </td>
+              </tr>
+            } @empty {
+              <tr>
+                <td colspan="8" class="text-center py-5">
+                  <div class="text-muted">
+                    <ng-icon name="tablerBriefcaseOff" size="48"></ng-icon>
+                    <p class="mt-2 mb-0">No case information found</p>
+                  </div>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+      @if (paginationConfig.totalPages > 1) {
+        <app-pagination 
+          [config]="paginationConfig" 
+          (pageChange)="onPageChange($event)">
+        </app-pagination>
+      }
+    }
+  </div>
+</div>
