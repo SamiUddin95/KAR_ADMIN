@@ -6,9 +6,10 @@
 .wrapper {
     height: 100%;
     width: 100%;
+    background-color: transparent;
 }
 
-// Content Page
+// Content Page (Pure Black)
 .content-page {
     display: flex;
     flex-direction: column;
@@ -17,15 +18,24 @@
     min-height: calc(100vh - #{calc($topbar-height + 1px)});
     transition: $transition-base;
     padding: 0 calc($grid-gutter-width * 0.5);
+    background-color: $pure-black;
 }
 
-// Page Head
+// Page Head (Black Background)
 .page-title-head {
     min-height: 40px;
-    background-color: var(--#{$prefix}light-bg-subtle);
+    background-color: rgba(26, 26, 26, 0.8);
     margin: 0 calc($spacer * -1) $spacer;
     padding: 0 $spacer;
-    border-bottom: 1px solid var(--#{$prefix}border-color);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    
+    h4, .breadcrumb-item, .breadcrumb-item a {
+        color: #e0e0e0 !important;
+    }
+    
+    .breadcrumb-item.active {
+        color: $gold !important;
+    }
 }
 
 // Logo Height

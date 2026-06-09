@@ -16,27 +16,12 @@ import Swal from 'sweetalert2';
   imports: [CommonModule, ReactiveFormsModule, NgIcon, PageTitleComponent],
   templateUrl: './case-detail.component.html',
   styles: [`
-    .card {
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    }
-    .card-header {
-      background: linear-gradient(135deg, #FFD700 0%, #C5A000 100%);
-      color: #000;
-      border-radius: 12px 12px 0 0;
-      padding: 1.25rem;
-    }
-    .card-title {
-      font-weight: 600;
-      margin: 0;
-    }
     .section-title {
-      color: #FFD700;
+      color: var(--ins-gold);
       font-weight: 600;
       margin-bottom: 1rem;
       padding-bottom: 0.5rem;
-      border-bottom: 2px solid #FFD700;
+      border-bottom: 2px solid var(--ins-gold);
     }
     .info-table {
       margin-bottom: 0;
@@ -45,60 +30,33 @@ import Swal from 'sweetalert2';
       width: 40%;
       background-color: rgba(255, 215, 0, 0.1);
       font-weight: 600;
-      color: #FFD700;
+      color: var(--ins-gold);
       border: none;
     }
     .info-table td {
-      background-color: #fff;
+      background-color: transparent;
       border: none;
+      color: var(--ins-body-color);
     }
     .badge {
       font-size: 0.75rem;
       padding: 0.25rem 0.5rem;
     }
-    .badge-pending {
-      background-color: #ffc107;
-      color: #000;
-    }
-    .badge-approved {
-      background-color: #28a745;
-      color: #fff;
-    }
-    .badge-rejected {
-      background-color: #dc3545;
-      color: #fff;
-    }
     .editable-section {
-      background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+      background: rgba(26, 26, 26, 0.5);
       border-radius: 10px;
       padding: 1.5rem;
       margin-top: 1.5rem;
-      border: 1px solid #cbd5e0;
+      border: 1px solid rgba(255, 215, 0, 0.2);
     }
     .form-control:focus {
-      border-color: #FFD700;
+      border-color: var(--ins-gold);
       box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
     }
     .form-label {
       font-weight: 500;
-      color: #FFD700;
+      color: var(--ins-gold);
       margin-bottom: 0.5rem;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, #FFD700 0%, #C5A000 100%);
-      border: none;
-      padding: 0.5rem 1.5rem;
-      font-weight: 500;
-      color: #000;
-    }
-    .btn-primary:hover {
-      background: linear-gradient(135deg, #FFE44D 0%, #FFD700 100%);
-    }
-    .btn-secondary {
-      background-color: #6c757d;
-      border: none;
-      padding: 0.5rem 1.5rem;
-      font-weight: 500;
     }
     .file-alert {
       background-color: rgba(255, 215, 0, 0.1);

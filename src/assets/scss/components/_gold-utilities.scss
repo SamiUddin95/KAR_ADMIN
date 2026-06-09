@@ -1,0 +1,304 @@
+//
+// Gold Gradient & Glassmorphism Utilities
+// Smoke White, Shine Gold, and Black Theme
+//
+
+// Gold Gradient Backgrounds
+.bg-gold-gradient {
+    background: linear-gradient(135deg, $gold-gradient-start 0%, $gold-gradient-mid 50%, $gold-gradient-end 100%) !important;
+    color: $charcoal-black;
+}
+
+.bg-gold-gradient-vertical {
+    background: linear-gradient(180deg, $gold-gradient-start 0%, $gold-gradient-mid 50%, $gold-gradient-end 100%) !important;
+    color: $charcoal-black;
+}
+
+.bg-gold-gradient-radial {
+    background: radial-gradient(circle, $gold-gradient-start 0%, $gold-gradient-mid 50%, $gold-gradient-end 100%) !important;
+    color: $charcoal-black;
+}
+
+.bg-gold-shine {
+    background: linear-gradient(135deg, $gold-shine-light 0%, $gold 50%, $gold-shine-dark 100%) !important;
+    color: $charcoal-black;
+    box-shadow: $glass-shadow-gold;
+}
+
+// Dark Gradient Backgrounds
+.bg-dark-gradient {
+    background: linear-gradient(135deg, $charcoal-black 0%, $dark-black 100%) !important;
+    color: $gold;
+}
+
+.bg-dark-gradient-vertical {
+    background: linear-gradient(180deg, $dark-black 0%, $charcoal-black 100%) !important;
+    color: $gold;
+}
+
+// Glassmorphism Effects
+.glass-card {
+    background: $glass-bg;
+    backdrop-filter: blur($glass-blur);
+    -webkit-backdrop-filter: blur($glass-blur);
+    border: 1px solid $glass-border;
+    border-radius: $glass-radius;
+    box-shadow: $glass-shadow;
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: $gold;
+        box-shadow: $glass-shadow-gold;
+    }
+}
+
+.glass-card-dark {
+    background: $glass-bg-dark;
+    backdrop-filter: blur($glass-blur);
+    -webkit-backdrop-filter: blur($glass-blur);
+    border: 1px solid $glass-border-dark;
+    border-radius: $glass-radius;
+    box-shadow: $glass-shadow;
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: $gold;
+        box-shadow: $glass-shadow-gold;
+    }
+}
+
+// Gold Border Utilities
+.border-gold {
+    border-color: $gold !important;
+}
+
+.border-gold-light {
+    border-color: $gold-light !important;
+}
+
+.border-gold-dark {
+    border-color: $gold-dark !important;
+}
+
+.border-gold-gradient {
+    border: 2px solid transparent;
+    background-image: linear-gradient($smoke-white, $smoke-white), 
+                      linear-gradient(135deg, $gold-gradient-start, $gold-gradient-mid, $gold-gradient-end);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+// Text Gradients
+.text-gold-gradient {
+    background: linear-gradient(135deg, $gold-gradient-start 0%, $gold-gradient-mid 50%, $gold-gradient-end 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+}
+
+.text-gold {
+    color: $gold !important;
+}
+
+.text-gold-light {
+    color: $gold-light !important;
+}
+
+.text-gold-dark {
+    color: $gold-dark !important;
+}
+
+// Glow Effects
+.glow-gold {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4), 
+                0 0 40px rgba(255, 215, 0, 0.2);
+}
+
+.glow-gold-strong {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6), 
+                0 0 60px rgba(255, 215, 0, 0.3),
+                0 0 90px rgba(255, 215, 0, 0.1);
+}
+
+// Hover Effects
+.hover-gold-glow {
+    transition: all 0.3s ease;
+    
+    &:hover {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.4), 
+                    0 0 40px rgba(255, 215, 0, 0.2);
+        transform: translateY(-2px);
+    }
+}
+
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+}
+
+// Smoke White Backgrounds
+.bg-smoke-white {
+    background-color: $smoke-white !important;
+}
+
+.bg-smoke-white-light {
+    background-color: $smoke-white-light !important;
+}
+
+.bg-smoke-white-dark {
+    background-color: $smoke-white-dark !important;
+}
+
+// Dark Backgrounds
+.bg-dark-black {
+    background-color: $dark-black !important;
+    color: $gold;
+}
+
+.bg-charcoal-black {
+    background-color: $charcoal-black !important;
+    color: $gold;
+}
+
+.bg-pure-black {
+    background-color: $pure-black !important;
+    color: $gold;
+}
+
+// Dark Mode Specific Styles
+html[data-bs-theme="dark"] {
+    .glass-card {
+        background: $glass-bg-dark;
+        border-color: $glass-border-dark;
+    }
+
+    .border-gold-gradient {
+        background-image: linear-gradient($dark-black, $dark-black), 
+                          linear-gradient(135deg, $gold-gradient-start, $gold-gradient-mid, $gold-gradient-end);
+    }
+}
+
+// Card with Gold Accent
+.card-gold-accent {
+    border-top: 3px solid $gold;
+    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-top-color: $gold-light;
+        box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2);
+        transform: translateY(-2px);
+    }
+}
+
+// Modal with Glassmorphism
+.modal-glass {
+    .modal-content {
+        background: $glass-bg;
+        backdrop-filter: blur($glass-blur);
+        -webkit-backdrop-filter: blur($glass-blur);
+        border: 1px solid $glass-border;
+        box-shadow: $glass-shadow;
+    }
+}
+
+html[data-bs-theme="dark"] {
+    .modal-glass {
+        .modal-content {
+            background: $glass-bg-dark;
+            border-color: $glass-border-dark;
+        }
+    }
+}
+
+// Input with Gold Focus
+.form-control-gold {
+    &:focus {
+        border-color: $gold;
+        box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+    }
+}
+
+// Badge with Gold
+.badge-gold {
+    background: linear-gradient(135deg, $gold 0%, $gold-dark 100%);
+    color: $charcoal-black;
+    font-weight: 600;
+}
+
+.badge-gold-outline {
+    background: transparent;
+    border: 1px solid $gold;
+    color: $gold;
+}
+
+// Alert with Gold
+.alert-gold {
+    background: rgba(255, 215, 0, 0.1);
+    border-left: 4px solid $gold;
+    color: $gold-dark;
+}
+
+html[data-bs-theme="dark"] {
+    .alert-gold {
+        background: rgba(255, 215, 0, 0.15);
+        color: $gold-light;
+    }
+}
+
+// Divider with Gold
+.divider-gold {
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, $gold 50%, transparent 100%);
+    margin: 1.5rem 0;
+}
+
+// Shimmer Effect
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.shimmer-gold {
+    background: linear-gradient(90deg, 
+        $gold-dark 0%, 
+        $gold 50%, 
+        $gold-light 75%, 
+        $gold 100%);
+    background-size: 1000px 100%;
+    animation: shimmer 3s infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+// Scroll Indicator
+.scroll-indicator-gold {
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, $gold 0%, $gold-dark 100%);
+        border-radius: 10px;
+        
+        &:hover {
+            background: linear-gradient(135deg, $gold-light 0%, $gold 100%);
+        }
+    }
+}

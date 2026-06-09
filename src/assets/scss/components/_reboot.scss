@@ -5,11 +5,13 @@
 html {
     position: relative;
     min-height: 100%;
+    background-color: $pure-black;
     // direction: ltr;
 }
 
 body {
     overflow-x: hidden;
+    background-color: transparent !important;
 }
 
 button,

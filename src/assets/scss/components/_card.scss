@@ -5,10 +5,10 @@
 .card {
     box-shadow: $card-box-shadow;
     margin-bottom: $spacer;
-    background: $glass-bg;
-    backdrop-filter: blur($glass-blur);
-    -webkit-backdrop-filter: blur($glass-blur);
-    border: 1px solid $glass-border;
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 215, 0, 0.2);
     border-radius: $glass-radius;
 
     .card-body {
@@ -45,8 +45,11 @@
     }
 
     &:hover {
-        box-shadow: $glass-shadow;
-        border-color: $glass-border-dark;
+        box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+        border-color: rgba(255, 215, 0, 0.4);
+        background: rgba(26, 26, 26, 0.95);
+        transform: translateY(-2px);
+        transition: all 0.3s ease;
     }
 }
 
@@ -170,5 +173,18 @@
 
     .nav-link {
         --#{$prefix}nav-link-padding-y: calc(var(--#{$prefix}card-cap-padding-y) + 2px);
+    }
+}
+
+// Card Action Items (Dark Theme)
+.card-action {
+    .card-action-item {
+        background-color: rgba(255, 215, 0, 0.1);
+        color: $gold;
+
+        &:hover {
+            background-color: rgba(255, 215, 0, 0.2);
+            color: $gold-light;
+        }
     }
 }

@@ -3,34 +3,43 @@
 //
 
 .table {
-    background: $glass-bg;
+    background: rgba(26, 26, 26, 0.8);
     backdrop-filter: blur($glass-blur);
     -webkit-backdrop-filter: blur($glass-blur);
-    border: 1px solid $glass-border;
+    border: 1px solid rgba(255, 215, 0, 0.2);
     border-radius: $glass-radius;
-    color: $body-color;
+    color: #e0e0e0;
 
     thead {
-        background: rgba(255, 215, 0, 0.1);
-        border-bottom: 1px solid $glass-border;
+        background: linear-gradient(135deg, $gold-gradient-start, $gold-gradient-mid, $gold-gradient-end);
+        border-bottom: 2px solid $gold;
 
         th {
-            color: $gold;
-            font-weight: 600;
-            border-bottom: 1px solid $glass-border;
+            color: $charcoal-black;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            border-bottom: none;
+            padding: 1rem 0.75rem;
         }
     }
 
     tbody tr {
-        border-bottom: 1px solid rgba(255, 215, 0, 0.05);
+        border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        background: transparent;
+
+        &:nth-child(even) {
+            background: rgba(255, 215, 0, 0.03);
+        }
 
         &:hover {
-            background: rgba(255, 215, 0, 0.05);
+            background: rgba(255, 215, 0, 0.08) !important;
         }
     }
 
     td {
-        border-color: rgba(255, 215, 0, 0.05);
+        border-color: rgba(255, 215, 0, 0.1);
     }
 }
 
@@ -104,4 +113,5 @@
 th[sortable] {
   cursor: pointer;
 }
+
 

@@ -7,10 +7,10 @@
     display: flex;
     align-items: center;
     padding: calc($grid-gutter-width * .5);
-    color: var(--#{$prefix}emphasis-color);
+    color: #e0e0e0;
     transition: margin-left .25s ease-in-out;
-    background-color: $card-bg;
-    border-top: 1px solid $card-border-color;
+    background-color: rgba(26, 26, 26, 0.8);
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
     margin: auto calc($grid-gutter-width * -0.5) 0;
 }
 

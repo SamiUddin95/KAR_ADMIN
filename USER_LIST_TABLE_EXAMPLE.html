@@ -1,0 +1,234 @@
+<!-- User List Table Example with Gold Gradient Header -->
+<!-- Same styling as Topbar -->
+
+<div class="container-fluid p-4">
+  <div class="row">
+    <div class="col-12">
+      
+      <!-- Card with Table -->
+      <div class="card glass-card">
+        <div class="card-header bg-gold-gradient">
+          <h5 class="mb-0 text-dark fw-bold">User List</h5>
+        </div>
+        <div class="card-body p-0">
+          
+          <!-- Table with Gold Gradient Header -->
+          <div class="table-responsive">
+            <table class="table table-hover mb-0">
+              
+              <!-- Table Header - Gold Gradient (same as topbar) -->
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Role</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              
+              <!-- Table Body -->
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img src="assets/images/users/user1.jpg" alt="User" class="rounded-circle me-2" width="32" height="32">
+                      <span class="fw-semibold">John Doe</span>
+                    </div>
+                  </td>
+                  <td>john@example.com</td>
+                  <td>+92 300 1234567</td>
+                  <td><span class="badge badge-gold">Admin</span></td>
+                  <td><span class="badge bg-success">Active</span></td>
+                  <td>
+                    <div class="d-flex gap-2">
+                      <button class="btn btn-sm btn-glass" title="View">
+                        <i class="icon-eye"></i>
+                      </button>
+                      <button class="btn btn-sm btn-glass" title="Edit">
+                        <i class="icon-edit text-gold"></i>
+                      </button>
+                      <button class="btn btn-sm btn-glass" title="Delete">
+                        <i class="icon-trash text-danger"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img src="assets/images/users/user2.jpg" alt="User" class="rounded-circle me-2" width="32" height="32">
+                      <span class="fw-semibold">Jane Smith</span>
+                    </div>
+                  </td>
+                  <td>jane@example.com</td>
+                  <td>+92 300 7654321</td>
+                  <td><span class="badge badge-gold-outline">User</span></td>
+                  <td><span class="badge bg-success">Active</span></td>
+                  <td>
+                    <div class="d-flex gap-2">
+                      <button class="btn btn-sm btn-glass" title="View">
+                        <i class="icon-eye"></i>
+                      </button>
+                      <button class="btn btn-sm btn-glass" title="Edit">
+                        <i class="icon-edit text-gold"></i>
+                      </button>
+                      <button class="btn btn-sm btn-glass" title="Delete">
+                        <i class="icon-trash text-danger"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>3</td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img src="assets/images/users/user3.jpg" alt="User" class="rounded-circle me-2" width="32" height="32">
+                      <span class="fw-semibold">Ali Khan</span>
+                    </div>
+                  </td>
+                  <td>ali@example.com</td>
+                  <td>+92 300 9876543</td>
+                  <td><span class="badge badge-gold-outline">User</span></td>
+                  <td><span class="badge bg-warning">Pending</span></td>
+                  <td>
+                    <div class="d-flex gap-2">
+                      <button class="btn btn-sm btn-glass" title="View">
+                        <i class="icon-eye"></i>
+                      </button>
+                      <button class="btn btn-sm btn-glass" title="Edit">
+                        <i class="icon-edit text-gold"></i>
+                      </button>
+                      <button class="btn btn-sm btn-glass" title="Delete">
+                        <i class="icon-trash text-danger"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <img src="assets/images/users/user4.jpg" alt="User" class="rounded-circle me-2" width="32" height="32">
+                      <span class="fw-semibold">Sara Ahmed</span>
+                    </div>
+                  </td>
+                  <td>sara@example.com</td>
+                  <td>+92 300 1112233</td>
+                  <td><span class="badge badge-gold">Admin</span></td>
+                  <td><span class="badge bg-danger">Inactive</span></td>
+                  <td>
+                    <div class="d-flex gap-2">
+                      <button class="btn btn-sm btn-glass" title="View">
+                        <i class="icon-eye"></i>
+                      </button>
+                      <button class="btn btn-sm btn-glass" title="Edit">
+                        <i class="icon-edit text-gold"></i>
+                      </button>
+                      <button class="btn btn-sm btn-glass" title="Delete">
+                        <i class="icon-trash text-danger"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+        
+        <!-- Pagination -->
+        <div class="card-footer bg-smoke-white border-top border-gold-dark">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="text-muted">
+              Showing 1 to 4 of 100 entries
+            </div>
+            <nav>
+              <ul class="pagination mb-0">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">Previous</a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link bg-gold border-gold text-dark" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Alternative: Simple Table without Card -->
+<div class="container-fluid p-4">
+  <div class="row">
+    <div class="col-12">
+      <h4 class="text-gold-gradient mb-3">User Management</h4>
+      
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>John Doe</td>
+              <td>john@example.com</td>
+              <td><span class="badge badge-gold">Active</span></td>
+              <td>
+                <button class="btn btn-sm btn-gold">Edit</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jane Smith</td>
+              <td>jane@example.com</td>
+              <td><span class="badge badge-gold">Active</span></td>
+              <td>
+                <button class="btn btn-sm btn-gold">Edit</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+  FEATURES:
+  ✅ Gold gradient header (same as topbar)
+  ✅ Dark text on gold gradient
+  ✅ Uppercase header text
+  ✅ Glassmorphism table background
+  ✅ Hover effects on rows
+  ✅ Works in both light and dark mode
+  ✅ Gold accent borders
+  ✅ Professional styling
+-->

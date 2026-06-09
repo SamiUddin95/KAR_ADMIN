@@ -32,15 +32,15 @@ $theme-colors-text-dark: (
 );
 
 // scss-docs-start theme-bg-subtle-dark-variables
-$primary-bg-subtle-dark:            rgba($primary, 20%);
-$secondary-bg-subtle-dark:          rgba($secondary, 20%);
+$primary-bg-subtle-dark:            rgba(255, 215, 0, 0.15);
+$secondary-bg-subtle-dark:          rgba(197, 160, 0, 0.15);
 $success-bg-subtle-dark:            rgba($success, 20%);
 $info-bg-subtle-dark:               rgba($info, 20%);
 $warning-bg-subtle-dark:            rgba($warning, 20%);
 $danger-bg-subtle-dark:             rgba($danger, 20%);
 $purple-bg-subtle-dark:             rgba($purple, 20%);
-$light-bg-subtle-dark:              #22232c;
-$dark-bg-subtle-dark:               mix($gray-800, $black);
+$light-bg-subtle-dark:              $charcoal-black;
+$dark-bg-subtle-dark:               $dark-black;
 // scss-docs-end theme-bg-subtle-dark-variables
 
 $theme-colors-bg-subtle-dark: (
@@ -79,23 +79,23 @@ $theme-colors-border-subtle-dark: (
   "dark":       $dark-border-subtle-dark,
 );
 
-$body-color-dark:                   #e8e8e8;
-$body-bg-dark:                      #0a1e1e;
+$body-color-dark:                   #e0e0e0;
+$body-bg-dark:                      $pure-black;
 
-$body-secondary-color-dark:         #9ba6b7;
-$body-secondary-bg-dark:            #0d2626;
+$body-secondary-color-dark:         #b0b0b0;
+$body-secondary-bg-dark:            $charcoal-black;
 
-$body-tertiary-color-dark:          #c5d3d8;
-$body-tertiary-bg-dark:             #0f2d2d;
+$body-tertiary-color-dark:          #c8c8c8;
+$body-tertiary-bg-dark:             rgba(255, 255, 255, 0.05);
 
-$body-emphasis-color-dark:          #b0bbc5;
+$body-emphasis-color-dark:          #f0f0f0;
 
-$border-color-dark:                 #0d3333;
-$border-color-translucent-dark:     #14a89c;
+$border-color-dark:                 rgba(255, 215, 0, 0.15);
+$border-color-translucent-dark:     rgba(255, 215, 0, 0.1);
 
-$headings-color-dark:               $body-color-dark;
-$link-color-dark:                   tint-color($primary, 40%);
-$link-hover-color-dark:             shift-color($link-color-dark, -$link-shade-percentage);
+$headings-color-dark:               #f5f5f5;
+$link-color-dark:                   $gold;
+$link-hover-color-dark:             $gold-light;
 $code-color-dark:                   tint-color($code-color, 40%);
 
 //

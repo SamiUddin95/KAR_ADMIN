@@ -19,6 +19,9 @@ $theme-galaxy:           true;
 
 // scss-docs-start gray-color-variables
 $white:    #fff;
+$smoke-white: #f8f9fa;
+$smoke-white-light: #fafbfc;
+$smoke-white-dark: #e8e9ea;
 $gray-100: #f6f7fb;
 $gray-200: #eef2f7;
 $gray-300: #e7e9eb;
@@ -28,13 +31,17 @@ $gray-600: #8a969c;
 $gray-700: #6c757d;
 $gray-800: #343a40;
 $gray-900: #313a46;
+$pure-black: #000000;
+$dark-black: #0a0a0a;
+$charcoal-black: #1a1a1a;
 
 // Glass morphism variables
-$glass-bg: rgba(255, 255, 255, 0.05);
-$glass-bg-dark: rgba(0, 0, 0, 0.3);
-$glass-border: rgba(255, 215, 0, 0.2);
-$glass-border-dark: rgba(255, 215, 0, 0.1);
+$glass-bg: rgba(255, 255, 255, 0.08);
+$glass-bg-dark: rgba(0, 0, 0, 0.6);
+$glass-border: rgba(255, 215, 0, 0.3);
+$glass-border-dark: rgba(255, 215, 0, 0.15);
 $glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+$glass-shadow-gold: 0 8px 24px 0 rgba(255, 215, 0, 0.2);
 $glass-blur: 12px;
 $glass-radius: 16px;
 $black:    #000;
@@ -70,6 +77,11 @@ $cyan:       #14a89c;
 $gold:       #FFD700;
 $gold-dark:  #C5A000;
 $gold-light: #FFE44D;
+$gold-gradient-start: #FFD700;
+$gold-gradient-mid: #FFC107;
+$gold-gradient-end: #FF9800;
+$gold-shine-light: #FFF4CC;
+$gold-shine-dark: #B8860B;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -447,7 +459,7 @@ $escaped-characters: (
 $enable-caret:                true;
 $enable-rounded:              true;
 $enable-shadows:              false;
-$enable-gradients:            false;
+$enable-gradients:            true;
 $enable-transitions:          true;
 $enable-reduced-motion:       true;
 $enable-smooth-scroll:        true;
@@ -461,7 +473,7 @@ $enable-negative-margins:     true;
 $enable-deprecation-messages: true;
 $enable-important-utilities:  true;
 
-$enable-dark-mode:            true;
+$enable-dark-mode:            false;  // Disabled - using dark theme as default only
 $color-mode-type:             data; // `data` or `media-query`
 
 // Gradient
@@ -508,7 +520,7 @@ $position-values: (
 
 $body-text-align:           null;
 $body-color:                #e0e0e0;
-$body-bg:                   #0a0a0a;
+$body-bg:                   $pure-black;
 
 $body-secondary-color:      #9ba6b7; //#8e92ad
 $body-secondary-bg:         $white;
