@@ -26,23 +26,23 @@ import Swal from 'sweetalert2';
       height: 40px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
     }
     .profile-placeholder {
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+      color: #000;
       font-weight: 600;
       font-size: 0.9rem;
-      box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+      box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
     }
     .modal-backdrop {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.8);
     }
     ng-icon {
       cursor: pointer;
@@ -52,34 +52,118 @@ import Swal from 'sweetalert2';
       transform: scale(1.15);
       opacity: 0.8;
     }
+    
+    /* Dark Theme Modal */
     .modal-content {
-      border: none;
+      background: rgba(26, 26, 26, 0.98);
+      border: 1px solid rgba(255, 215, 0, 0.2);
       border-radius: 15px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 40px rgba(255, 215, 0, 0.15);
+      color: #e0e0e0;
     }
     .modal-header {
-      border-bottom: 2px solid #f0f0f0;
+      border-bottom: 2px solid var(--ins-gold);
       padding: 1.5rem;
-      background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+      background: linear-gradient(135deg, #FFD700 0%, #FFC107 50%, #FF9800 100%);
       border-radius: 15px 15px 0 0;
+    }
+    .modal-title {
+      color: #1a1a1a;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+    .modal-header ng-icon {
+      color: #1a1a1a;
+    }
+    .btn-close {
+      filter: brightness(0);
+      opacity: 0.7;
+    }
+    .btn-close:hover {
+      opacity: 1;
+      transform: scale(1.1);
     }
     .modal-body {
       padding: 2rem;
+      background: rgba(26, 26, 26, 0.98);
     }
     .modal-footer {
-      border-top: 2px solid #f0f0f0;
+      border-top: 1px solid rgba(255, 215, 0, 0.2);
       padding: 1.5rem;
-      background-color: #fafafa;
+      background: rgba(255, 215, 0, 0.05);
       border-radius: 0 0 15px 15px;
     }
-    .form-control:focus {
-      border-color: #667eea;
-      box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
-    }
+    
+    /* Form Controls Dark Theme */
     .form-label {
       font-weight: 500;
-      color: #495057;
+      color: var(--ins-gold);
       margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
+      background-color: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      color: #e0e0e0;
+    }
+    .form-control::placeholder {
+      color: #6c757d;
+    }
+    .form-control:focus, .form-select:focus {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-color: var(--ins-gold);
+      box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+      color: #e0e0e0;
+    }
+    .form-select option {
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+    }
+    
+    /* Toggle Switch Dark Theme */
+    .form-check-input {
+      background-color: rgba(0, 0, 0, 0.4);
+      border-color: rgba(255, 215, 0, 0.3);
+    }
+    .form-check-input:checked {
+      background-color: var(--ins-gold);
+      border-color: var(--ins-gold);
+    }
+    .form-check-label {
+      color: #e0e0e0;
+    }
+    
+    /* Buttons Dark Theme */
+    .btn-primary {
+      background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
+      border: none;
+      color: #000;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #FFE44D 0%, #FFD700 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    }
+    .btn-secondary {
+      background-color: rgba(108, 117, 125, 0.3);
+      border: 1px solid rgba(108, 117, 125, 0.5);
+      color: #e0e0e0;
+    }
+    .btn-secondary:hover {
+      background-color: rgba(108, 117, 125, 0.5);
+      border-color: rgba(108, 117, 125, 0.7);
+      color: #ffffff;
+    }
+    
+    /* Upload Area Dark Theme */
+    .bg-gradient {
+      background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%) !important;
+    }
+    small.text-muted {
+      color: #b0b0b0 !important;
     }
   `]
 })
