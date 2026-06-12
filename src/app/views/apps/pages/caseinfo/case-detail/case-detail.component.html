@@ -2,7 +2,7 @@
 
 @if (loading) {
   <div class="text-center py-5">
-    <div class="spinner-border text-primary" role="status">
+    <div class="spinner-border spinner-gold" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
@@ -144,7 +144,7 @@
       @if (notes.length > 0) {
         <div class="notes-list">
           @for (note of notes; track note.id) {
-            <div class="note-item mb-3 p-3 bg-light rounded">
+            <div class="note-item mb-3 p-3 rounded">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <strong>Note #{{ note.id }}</strong>
                 <small class="text-muted">{{ formatDate(note.createdOn) }}</small>
@@ -157,9 +157,9 @@
           }
         </div>
       } @else {
-        <div class="text-center text-muted py-3">
-          <ng-icon name="tablerFileTextOff" size="32"></ng-icon>
-          <p class="mt-2 mb-0">No notes available for this case</p>
+        <div class="text-center py-3">
+          <ng-icon name="tablerFileTextOff" size="32" class="text-muted"></ng-icon>
+          <p class="mt-2 mb-0 text-muted">No notes available for this case</p>
         </div>
       }
     </div>
@@ -285,7 +285,7 @@
                 formControlName="notes"
                 rows="4"
                 placeholder="Add a new note for this case..."></textarea>
-              <small class="text-muted">This will add a new note to the case</small>
+              <small class="form-text">This will add a new note to the case</small>
             </div>
           </div>
         </div>
